@@ -1,0 +1,288 @@
+/* fontes importadas do google fonts 
+font-family: 'Righteous', cursive;
+font-family: 'Sarala', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap');
+
+/*reset de formatação css*/
+*{ 
+    margin: 0;/*A propriedade margin do CSS define a área de margem nos quatro lados do elemento */
+    padding:0;/* distancia da tag e o conteúdo dela */
+    box-sizing: border-box;/*faz com que o navegador não calcule a dimensão de um elemento somando bordas e margens com altura e largura.*/
+    text-decoration: none;/*remove qualquer decoração do texto, sublinhados, cor azuis */
+}
+
+
+/*backgraund degrade*/
+body{
+    font-size: 100%;
+    background: linear-gradient(to left, #2f2325 ,#523338, #704a41, #2f2325 ); /* deixa o fundo gradiente*/
+    background-size: 500% 100%; /* tamanho de 500 e no eixo y tera 100% */
+    animation: degrade-animado 6s infinite alternate ; /*nome da animação / duração / quantas vezes repetir / alternancia de 0 a 100 */
+}
+
+/*manipulação de keyframe ( para animação)*/
+
+
+@keyframes degrade-animado {
+    0%{
+        background-position-x: 0%;
+    }
+    100%{
+        background-position-x: 100%;
+    }
+    
+}
+
+.cabecalho{
+    display: flex;/*deixa o conteudo da tag na horizontal */
+    flex-direction: row; /* deixa o conteudo da tag na horizontal, reforçando o display flex */
+    align-items: center;/*centraliza os itens, nesta caso alinha os itens da nav assim também como o logo*/
+    justify-content: space-around;/*gera uma borda nas laterais da classe assim também como um espaçamento entre o logo e a nav*/
+    padding: 24px;
+    
+}
+
+.cabecalho-imagem{
+height: 72px;
+
+}
+
+.cabecalho-menu{
+    display: flex;
+    gap: 32px;
+    list-style: none; /* serve para tirar o pontinho na marcação da nav */
+}
+.cabecalho-menu-item{
+
+    font-family: 'Sarala', sans-serif;
+    color: rgba(255, 242, 231, 1);
+    font-weight: 400;
+    font-size: 18px;
+    
+    
+    
+}
+
+
+.cabecalho a:hover {
+    color: rgba(236, 214, 196, 0.53);
+    
+}
+
+
+/* botão para aparecer somente no celular */
+.hamburger{
+    display: none; /* esconde o botão */
+    border: none;
+    background: none;
+    border: 3px solid #ffff; /* primeiro traço do menu */
+    cursor: pointer;;
+}
+
+
+.hamburger::before,
+.hamburger::after{
+    content: " ";
+    display:block;
+    width: 30px;
+    height: 3px;
+    background-color: #ffff;
+    margin-top: 5px;
+}
+
+
+
+
+.conteudo{
+    border-top: 0.4px solid #FFF2E7; /* um traço , tamanho, que tipo e cor*/
+    margin-bottom: 48px;
+
+}
+
+
+ .conteudo-principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+  }
+ 
+
+  .conteudo-principal-escrito{
+    display:inline-block;
+    flex-direction: column;
+    gap: 32px;
+    
+
+}  
+  .conteudo-principal-escrito-titulo{
+    display: flex;
+    font-family: 'Righteous', cursive;
+    font-weight: 400;
+    font-size: 64px;
+    color: #FFF2E7;
+    
+}
+
+.conteudo-principal-escrito-subtitulo{
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #ECD6C4;
+    margin-top: 20px;
+    margin-top: 40px;
+   
+}
+
+.conteudo-principal-escrito-botao{
+    background-color: #ECD6C4;
+    width: 180px;
+    height: 60px;
+    margin-top: 40px;
+    border: none;
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #2F2325;
+    
+    }
+    .conteudo-principal-escrito-botao:hover {
+        background-color: rgba(236, 214, 196, 0.53);
+        
+    }
+
+    .conteudo-secundario{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:24px; /* espaçamento entre itens ( entre linhas)*/
+        margin-top: 48px;
+
+        
+    }
+
+    .conteudo-secundario-titulo{
+        border-top: 0.4px solid #FFF2E7; /*um traço na horizontal*/
+        padding: 48px;
+        font-family: 'Righteous', cursive;
+        font-weight: 400;
+        font-size: 24px;
+        color: #FFF2EF;
+        margin-bottom: 10px;
+
+    }
+
+    .conteudo-secundario-paragrafo{
+
+        font-family: 'Sarala', sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+        color: #ECD6C4;
+
+    }
+
+    .rodape{
+        padding: 32px;
+        border-top: 0.4px solid #FFF2E7; /*um traço na horizontal*/
+
+    }
+
+    .rodape-imagem{
+       height: 48px;
+       display: block;/*para centralizar a imagem*/
+       margin: 0 auto;/*para centralizar a imagem*/
+    }
+
+    /*///////=======RESPONSIVIDADE ========\\\\\\\\\\*/
+
+    @media screen and (max-width:700px) {
+        .hamburger{
+            display: block;
+            z-index: 1; /*para o botão ficar sobre o circulo*/
+        }
+
+        .cabecalho-menu{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to left, #2f2325 ,#523338, #704a41, #2f2325 ); /* deixa o fundo gradiente*/
+            background-size: 400% 100%; /* tamanho de 500 e no eixo y tera 100% / proporção do degrade*/
+            animation: degrade-animado 6s infinite alternate ; /* chamando a animação de novo do background*/
+            /*mascara em formato de circulo*/
+            clip-path: circle(100px  at 90% -15%); /*cirulo que se espandira ao clicar no menu*/ /* -15% na posisão y, eleva o circulo pra cima*/
+            transition: 1s ease-out; /*para fazer a transição suave*/
+
+
+            flex-direction: column; /* poem o itens em coluna */
+            justify-content: space-around; /*distriui os itens no espaço disponivel */
+            align-items: center;
+            gap: 0;
+            pointer-events: none; /* para o usuario não seja capaz de clicar em algo que não esta aparecendo na tela */
+            
+        }
+
+
+        /* função que será chamada no javascript para abrir o menu*/
+        .open{
+            clip-path:  circle(1500px at 90% -15%);
+            pointer-events: all;
+        }
+
+
+        .conteudo-principal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+
+        }
+
+       
+
+        .conteudo-principal-escrito{
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+        }
+
+
+        .conteudo-principal-escrito-titulo{
+            font-weight: 400;
+            font-size: 45px;
+        }
+
+
+        .conteudo-principal-escrito-subtitulo{
+            font-weight: 400;
+            font-size: 20px;
+        }
+
+
+        .conteudo-principal-escrito-botao{
+            width: 180px;
+            height: 50px;
+            margin-top: 20px;
+                     
+        }
+
+        .conteudo-secundario-paragrafo{
+    
+            margin: 0px  20px  0px  20px;
+        
+            flex-direction: column;
+            text-align: justify;
+
+        }
+
+    }
+    
+    
+   
