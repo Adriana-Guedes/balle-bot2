@@ -13,5 +13,5 @@ Realizado algumas  alterações:
 
 5 - Um botão hamburguer para responsividade
 
-# Balle-Bot - ** https://adriana-guedes.github.io/balle-bot2/ **
+# Balle-Bot - target=" https://adriana-guedes.github.io/balle-bot2/"
 
